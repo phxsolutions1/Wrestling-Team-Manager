@@ -1,0 +1,79 @@
+I am building a local-first webview application using HTML, CSS, and JavaScript (no server-side code) to record and score wrestling matches. This app will be used offline on a single device such as a phone or tablet, and all data (videos, match logs, rosters) will be saved locally.
+
+🥇 Goal:
+Create a full wrestling match management tool that allows users to:
+
+Pre-enter team rosters (names only, no planned weights)
+
+Perform and record weigh-ins later
+
+Set up a competition (dual or individual format)
+
+Record matches with score overlay
+
+Control and customize scoring buttons
+
+Start/stop/reset timer and track periods
+
+See timestamped logs of all events
+
+Finalize results and calculate team points
+
+Save videos and stats in structured local folders
+
+🧱 Data Structure:
+The app will store data in JSON files or in-browser (IndexedDB or localStorage). Here are the planned objects:
+
+Team: id, name, [wrestlerIds]
+
+Wrestler: id, name, teamId, grade, weighIn: { weight, unit, timestamp }
+
+Competition: id, name, format, [teamIds], [matchIds]
+
+Match: id, competitionId, teamA, teamB, wrestlerA, wrestlerB, weightClass, [periods], eventLog, finalResult, videoPath
+
+Event (log): id, matchId, timestamp, period, action, wrestler, score: { wrestlerA, wrestlerB }
+
+📺 Video Recording & Overlay:
+The app should record video using the webcam or mobile device camera.
+
+While recording, the overlay (score, time, period) must appear in real-time and be stored with the video if possible, or displayed during playback.
+
+🧭 Layout:
+Bottom: Timer and scoring controls
+
+Right side: Event log with timestamps
+
+Center: Video + score overlay
+
+❌ Constraints:
+No backend/server components
+
+No external database
+
+Must work fully offline in a local webview
+
+✅ Request:
+Please help me:
+
+Set up a project structure on Replit (or similar)
+
+Scaffold the HTML and JavaScript files
+
+Create a basic UI with tabs or views for:
+
+Roster setup
+
+Weigh-ins
+
+Competition builder
+
+Match control (video, score, timer)
+
+Match review
+
+Implement local data handling (via localStorage or IndexedDB)
+
+Record video via webcam and save with local metadata
+
+Keep the UI simple and functional — it’s a tool for coaches, not a consumer app. Prioritize usability and accurate data tracking.
